@@ -4,6 +4,7 @@ RUN apk --no-cache add build-base git python3 && \
     rm -rf /var/cache/apk/*
 
 RUN yarn global add node-gyp
+RUN npm explore npm/node_modules/@npmcli/run-script -g -- npm_config_global=false npm install node-gyp@latest
 
 WORKDIR /app
 
